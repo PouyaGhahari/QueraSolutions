@@ -3,6 +3,29 @@
 # https://quera.ir/problemset/university/294/%D9%85%D8%B9%D8%A7%D8%AF%D9%84%D9%87%20%D8%AF%D8%B1%D8%AC%D9%87%20%D8%AF%D9%88
 # https://b2n.ir/p13657
 
+a, b, c = map(float, input().split())
+
+delta = (b ** 2 - 4 * a * c)
+if a != 0 and b == 0 and c == 0:
+    print("0.000")
+elif a != 0:
+    if delta == 0:
+        javab = (-b) / (2 * a)
+        print(javab)
+    elif delta > 0:
+        javab1 = (-b + (delta ** 0.5)) / (2 * a)
+        javab2 = (-b - (delta ** 0.5)) / (2 * a)
+        print("%.3f\n%.3f" % (javab1, javab2) if javab1 < javab2 else "%.3f\n%.3f" % (javab2, javab1))
+    else:
+        print("IMPOSSIBLE")
+else:
+    if b != 0:
+        print("%.3f" % (-c/b))
+    else:
+        print("IMPOSSIBLE")
+
+###########################################################
+
 a = float(input())
 b = float(input())
 c = float(input())
